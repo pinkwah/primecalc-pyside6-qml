@@ -1,0 +1,6 @@
+inputs:
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
+
+  nixpkgs-stable:
+    url: nixpkgs/nixos-23.11-small

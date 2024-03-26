@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "primecalc"
+version = "0.1.0"
+description = "Python Qt + QML example project"
+authors = ["Zohar Malamant <ZOM@equinor.com>"]
+license = "GPLv3"
+readme = "README.md"
+packages = [{ include = "primecalc", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "3.11.8"
+PySide6 = "^6.6.2"
+QtPy = "^2.4.1"
+pydantic = "^2.6.4"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.9.0"
+ruff = "^0.3.4"
+
+[tool.poetry.scripts]
+primecalc = "primecalc.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
