@@ -23,7 +23,13 @@ let
       QML_IMPORT_PATH = null;
       GTK_PATH = with pkgs-stable; "${libcanberra-gtk3}/lib";
 
-      packages = [ pkgs-stable.qgnomeplatform-qt6 pkgs-stable.gtk3 qtbase qtwayland qtdeclarative ];
+      packages = [
+        pkgs-stable.qgnomeplatform-qt6
+        pkgs-stable.gtk3
+        qtbase
+        qtwayland
+        qtdeclarative
+      ];
     })
   else
     (with pkgs-stable.qt5; {
@@ -32,7 +38,8 @@ let
       QML_IMPORT_PATH = "${config.env.DEVENV_PROFILE}/${qtbase.qtQmlPrefix}";
       LD_LIBRARY_PATH = null;
 
-      packages = [ pkgs-stable.adwaita-qt5 qtbase qtwayland qtx11extras qtdeclarative ];
+      packages =
+        [ pkgs-stable.adwaita-qt5 qtbase qtwayland qtx11extras qtdeclarative ];
     });
 
 in {
